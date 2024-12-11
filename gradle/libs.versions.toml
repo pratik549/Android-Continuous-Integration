@@ -6,7 +6,13 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
+# adding support for compose in activities
 activityCompose = "1.9.3"
+# Compose - Bill of materials mapping
+# https://developer.android.com/develop/ui/compose/bom/bom-mapping
+# all compose based libraries will be auto aligned to match the BOM
+# all necessary compose libraries will be auto added but independent
+# one needs to be mentioned in [libraries]
 composeBom = "2024.04.01"
 
 [libraries]
@@ -27,6 +33,11 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+# Kotlin version ref
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# Compose Kotlin plugin version - add new functionality to kotlin compiler to make use of composable functions
+# As long as you are using Compose Multiplatform 1.6.10 or higher and Kotlin 1.7.10 or higher, Compose Multiplatform is compatible with Kotlin. There is no need to manually align their versions.
+# compiler is both backward and forward compatible - https://android-developers.googleblog.com/2022/06/independent-versioning-of-Jetpack-Compose-libraries.html
+# so can be updated independently
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 

@@ -40,7 +40,8 @@ android {
 }
 
 dependencies {
-
+    // libs here refers to the libraries and plugins defined in gradle/libs.version.toml file
+    // toml - Tom's Obvious, Minimal Language
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
